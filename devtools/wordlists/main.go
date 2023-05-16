@@ -13,9 +13,9 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
+	"gopkg.in/yaml.v3"
 
 	"github.com/PlanktoScope/machine-name/internal/wordlists/sources"
-	"gopkg.in/yaml.v3"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 }
 
 func cleanGenerated(dir string) error {
-	file, err := os.Open(dir)
+	file, err := os.Open(filepath.Clean(dir))
 	if err != nil {
 		return errors.Wrap(err, "couldn't open directory containing generated wordlists")
 	}
@@ -71,11 +71,11 @@ func generateAll(sourcesDir fs.FS, generatedDir string) error {
 		}
 		language := entry.Name()
 		fmt.Printf("Generating word lists for language '%s'...\n", language)
-		sourcesDir, err := fs.Sub(sourcesDir, language)
+		languageSourcesDir, err := fs.Sub(sourcesDir, language)
 		if err != nil {
 			return errors.Wrapf(err, "couldn't open wordlist source directory '%s'", language)
 		}
-		if err := generate(sourcesDir, filepath.Join(generatedDir, language)); err != nil {
+		if err := generate(languageSourcesDir, filepath.Join(generatedDir, language)); err != nil {
 			return errors.Wrapf(
 				err, "couldn't generate word lists for language %s in %s",
 				language, filepath.Join(generatedDir, language),
@@ -177,22 +177,34 @@ func loadWords(sources fs.FS, files []string) (map[string]struct{}, error) {
 	return allWords, nil
 }
 
-func saveWordList(outputDir string, wordList []string, filename string) error {
+func saveWordList(outputDir string, wordList []string, filename string) (err error) {
 	const perm = 0o777 // allow everything
-	os.MkdirAll(outputDir, perm)
-	outputFile := filepath.Join(outputDir, filename)
+	if err = os.MkdirAll(outputDir, perm); err != nil {
+		return errors.Wrapf(err, "couldn't make directory '%s'", outputDir)
+	}
+	outputFile := filepath.Clean(filepath.Join(outputDir, filename))
 	file, err := os.OpenFile(outputFile, os.O_RDWR|os.O_CREATE|os.O_TRUNC, perm)
 	if err != nil {
 		return errors.Wrapf(err, "couldn't open file '%s' for writing", outputFile)
 	}
-	defer file.Close()
+	defer func() {
+		if cerr := file.Close(); cerr != nil {
+			if err != nil {
+				fmt.Println(errors.Wrapf(cerr, "couldn't close '%s'", outputFile))
+				return
+			}
+			err = cerr
+		}
+	}()
 
 	writer := bufio.NewWriter(file)
 	for _, word := range wordList {
-		if _, err := writer.WriteString(fmt.Sprintf("%s\n", word)); err != nil {
+		if _, err = writer.WriteString(fmt.Sprintf("%s\n", word)); err != nil {
 			return errors.Wrapf(err, "couldn't write word '%s' to file '%s'", word, outputFile)
 		}
 	}
-	writer.Flush()
-	return nil
+	if err = writer.Flush(); err != nil {
+		return errors.Wrapf(err, "couldn't flush file '%s' to storage", outputFile)
+	}
+	return err
 }
