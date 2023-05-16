@@ -1,0 +1,13 @@
+first:
+  sources:
+    - 'glitch-friendly-words-predicates.txt'
+  filters:
+    - 'basic-english.txt'
+
+second:
+  sources:
+    - 'glitch-friendly-words-objects.txt'
+    - 'glitch-friendly-words-collections.txt'
+    - 'glitch-friendly-words-teams.txt'
+  filters:
+    - 'basic-english.txt'
