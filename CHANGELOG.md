@@ -10,3 +10,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Programmatic generation of US English word lists.
+- Generation of machine names from 32-bit serial numbers.

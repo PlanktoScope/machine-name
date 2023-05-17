@@ -7,7 +7,29 @@ Devices often assign a (pseudo-)unique serial number to each unit. However, each
 
 ## Usage
 
-TBD
+First, you will need to download machine-name, which is available as a single self-contained executable file. You should visit this repository's [releases page](https://github.com/PlanktoScope/machine-name/releases/latest) and download an archive file for your platform and CPU architecture; for example, on a Raspberry Pi 4, you should download the archive named `machine-name{version number}_linux_arm.tar.gz` (where the version number should be substituted). You can extract the machine-name binary from the archive using a command like:
+```
+tar -xzf machine-name{version number}_{os}_{cpu architecture}.tar.gz machine-name
+```
+
+Then you may need to move the machine-name binary into a directory in your system path, or you can just run the machine-name binary in your current directory (in which case you should replace `machine-name` with `./machine-name` in the commands listed below).
+
+Once you have machine-name, you should run it as follows:
+```
+machine-name name --format=hex --sn=0xd6b82659
+```
+but replacing `0xd6b82659` with a 32-bit hex string representing a serial number. The program will then print the machine name corresponding to that serial number. For example, the following serial numbers will result in the following machine names:
+
+| Serial Number | Machine Name          |
+|---------------|-----------------------|
+| `0xdeadc0de`  | metal-slope-23501     |
+| `0xd6b82659`  | chain-list-27764      |
+| `0x0`         | able-account-0        |
+| `0x1`         | small-ball-26954      |
+| `0x2`         | safe-minute-6738      |
+| `0x3`         | linen-opinion-33692   |
+| `0x4`         | conscious-pocket-1684 |
+| `0x8123`      | clear-field-33719     |
 
 ## Licensing
 
