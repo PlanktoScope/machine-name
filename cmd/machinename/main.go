@@ -25,7 +25,7 @@ var app = &cli.App{
 	Name: "machine-name",
 	// TODO: see if there's a way to get the version from a build tag, so that we don't have to update
 	// this manually
-	Version: "v0.1.0",
+	Version: "v0.1.1",
 	Usage:   "Generates localized Heroku-style names from 32-bit serial numbers",
 	Commands: []*cli.Command{
 		nameCmd,
@@ -125,7 +125,7 @@ func computeName(sn uint32, first []string, second []string) string {
 	quotient /= firstSize
 	secondIndex := quotient % secondSize
 	quotient /= secondSize
-	return fmt.Sprintf("%s-%s-%d\n", first[firstIndex], second[secondIndex], quotient)
+	return fmt.Sprintf("%s-%s-%d", first[firstIndex], second[secondIndex], quotient)
 }
 
 const (

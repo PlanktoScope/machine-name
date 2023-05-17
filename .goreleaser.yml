@@ -19,7 +19,7 @@ builds:
 archives:
   - id: machine-name
     builds: ["machine-name"]
-    name_template: "machine-name{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    name_template: "machine-name_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     format_overrides:
     - goos: windows
       format: zip
