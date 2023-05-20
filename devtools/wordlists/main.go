@@ -15,7 +15,7 @@ import (
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v3"
 
-	"github.com/PlanktoScope/machine-name/internal/wordlists/sources"
+	"github.com/PlanktoScope/machine-name/internal/sourcewords"
 )
 
 func main() {
@@ -25,13 +25,13 @@ func main() {
 	}
 
 	fmt.Println("Resetting the directory of generated wordlists...")
-	outputDir := filepath.Join(cwd, "internal", "wordlists", "generated")
+	outputDir := filepath.Join(cwd, "pkg", "wordlists")
 	if err = cleanGenerated(outputDir); err != nil {
 		panic(err)
 	}
 
 	fmt.Println("Generating wordlists from sources...")
-	if err = generateAll(sources.WordlistsFS, outputDir); err != nil {
+	if err = generateAll(sourcewords.WordlistsFS, outputDir); err != nil {
 		panic(err)
 	}
 

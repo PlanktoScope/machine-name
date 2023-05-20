@@ -8,6 +8,12 @@ All dates in this file are given in the [UTC time zone](https://en.wikipedia.org
 
 ## Unreleased
 
+## 0.1.2 - 2023-05-20
+
+### Added
+
+- Embedded wordlists and name-generation functionality are now provided in public packages.
+
 ## 0.1.1 - 2023-05-17
 
 ### Fixed
