@@ -100,6 +100,11 @@ func generate(sources fs.FS, generatedDir string) error {
 	if err = saveWordList(generatedDir, firstWordList, "first.txt"); err != nil {
 		return errors.Wrap(err, "couldn't save generated first word list")
 	}
+	sort.Slice(firstWordList, func(i, j int) bool {
+		return len(firstWordList[i]) > len(firstWordList[j])
+	})
+	firstWordMaxLength := len(firstWordList[0])
+	fmt.Printf("    The longest word has %d characters.\n", firstWordMaxLength)
 	fmt.Println("  Generating second wordlist...")
 	secondWordList, err := makeWordList(sources, config.Second)
 	if err != nil {
@@ -110,12 +115,23 @@ func generate(sources fs.FS, generatedDir string) error {
 	if err = saveWordList(generatedDir, secondWordList, "second.txt"); err != nil {
 		return errors.Wrap(err, "couldn't save generated second word list")
 	}
+	sort.Slice(secondWordList, func(i, j int) bool {
+		return len(secondWordList[i]) > len(secondWordList[j])
+	})
+	secondWordMaxLength := len(secondWordList[0])
+	fmt.Printf("    The longest word has %d characters.\n", secondWordMaxLength)
+
 	const uint32max = 4294967295
 	digits := math.Ceil(math.Log10(
 		uint32max / float64(len(firstWordList)) / float64(len(secondWordList)),
 	))
 	fmt.Printf(
 		"  A 32-bit serial number will require a %.f-digit number at the end of the name.\n", digits,
+	)
+	fmt.Printf(
+		"  A machine name in format first-second-number with a %.f-digit number will have a max "+
+			"length of %d characters.\n",
+		digits, firstWordMaxLength+1+secondWordMaxLength+1+int(digits),
 	)
 	return nil
 }

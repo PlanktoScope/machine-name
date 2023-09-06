@@ -1,8 +1,8 @@
 able
 angry
 apple
-automatic
 awake
+awesome
 band
 berry
 bird
@@ -30,7 +30,7 @@ cold
 common
 complete
 complex
-conscious
+cool
 copper
 copy
 cord
@@ -38,7 +38,7 @@ dark
 dear
 deep
 delicate
-different
+disco
 dog
 dust
 early
@@ -73,7 +73,7 @@ healthy
 hollow
 horn
 horse
-important
+hungry
 ink
 iron
 island
@@ -100,7 +100,7 @@ mountain
 narrow
 natural
 near
-necessary
+nice
 night
 north
 open
@@ -111,7 +111,7 @@ paper
 parallel
 past
 plant
-political
+positive
 possible
 power
 probable
@@ -119,7 +119,7 @@ quick
 quiet
 rain
 regular
-responsible
+rich
 right
 ring
 river
