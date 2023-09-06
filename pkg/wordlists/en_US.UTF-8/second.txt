@@ -1,7 +1,7 @@
 account
 act
 addition
-adjustment
+afternoon
 agreement
 air
 amount
@@ -18,7 +18,7 @@ argument
 art
 attempt
 attention
-attraction
+author
 authority
 bag
 balance
@@ -120,9 +120,9 @@ engine
 event
 existence
 expansion
-experience
 expert
 eye
+eyebrow
 fact
 fall
 farm
@@ -240,7 +240,7 @@ night
 noise
 note
 number
-observation
+ocean
 offer
 office
 open
@@ -248,7 +248,7 @@ operation
 opinion
 orange
 order
-organization
+origin
 ornament
 page
 paint
@@ -376,7 +376,7 @@ stretch
 structure
 substance
 sugar
-suggestion
+suit
 summer
 sun
 surprise

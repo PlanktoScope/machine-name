@@ -3,7 +3,7 @@ A tool for mapping serial numbers to language-localized names
 
 ## Introduction
 
-Devices often assign a (pseudo-)unique serial number to each unit. However, each device may also need a (pseudo-) unique human-readable name for easy access, e.g. to network services. This package provides a one-to-one mapping between serial numbers (within a finite range) and Heroku-style names (i.e. two simple words followed by a short number, such as `friendly-cat-4827`). The names are constructed from word lists within a specific locale, so that the language used for the name can be localized.
+Devices often assign a (pseudo-)unique serial number to each unit. However, each device may also need a (pseudo-) unique human-readable name for easy access, e.g. to network services. This package provides a one-to-one mapping between serial numbers (within a finite range) and Heroku-style names (i.e. two simple words followed by a short number, such as `friendly-cat-4827`). The names are constructed from word lists within a specific locale, so that the language used for the name can be localized. Additionally, the maximum allowed length of a generated name is 24 characters (strictly speaking, 24 bytes); this allows a short 8-character (strictly speaking, 8-byte) prefix to be prepended to the machine name (e.g. `pkscope-friendly-cat-4827`) for use as a Wi-Fi SSID, without violating the maximum allowed length of 32 bytes for a Wi-Fi SSID.
 
 ## Usage
 

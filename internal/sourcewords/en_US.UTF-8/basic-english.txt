@@ -6,7 +6,8 @@ acid
 across
 act
 addition
-adjustment
+# adjustment # this word is too long; instead, we allow the following word:
+afternoon
 advertisement
 after
 again
@@ -38,9 +39,11 @@ at
 # attack
 attempt
 attention
-attraction
+# attraction # this word is too long; instead, we allow the following word:
+author
 authority
-automatic
+# automatic # this word is too long; instead, we allow the following word (out of order):
+awesome
 awake
 baby
 back
@@ -152,7 +155,8 @@ complete
 complex
 condition
 connection
-conscious
+# conscious # this word is too long; instead, we allow the following word:
+cool
 control
 cook
 copper
@@ -195,7 +199,8 @@ desire
 destruction
 detail
 development
-different
+# different # this word is too long; instead, we allow the following word:
+disco
 digestion
 direction
 dirty
@@ -242,7 +247,8 @@ example
 exchange
 existence
 expansion
-experience
+# experience # this word is too long; instead, we allow the following word (which has to be out of alphabetical order):
+eyebrow
 expert
 eye
 # face
@@ -353,7 +359,8 @@ ice
 idea
 if
 ill
-important
+# important # this word is too long; instead, we allow the following word (out of order):
+hungry
 impulse
 in
 increase
@@ -464,7 +471,8 @@ narrow
 # nation
 natural
 near
-necessary
+# necessary # this word is too long; instead, we allow the following word:
+nice
 neck
 need
 needle
@@ -483,7 +491,8 @@ note
 now
 number
 # nut
-observation
+# observation # this word is too long; instead, we allow the following word:
+ocean
 of
 off
 offer
@@ -499,7 +508,8 @@ opposite
 or
 orange
 order
-organization
+# organization # this word is too long; instead, we allow the following word:
+origin
 ornament
 other
 out
@@ -537,7 +547,8 @@ pocket
 point
 # poison
 polish
-political
+# political # this word is too long; instead, we allow the following word:
+positive
 poor
 # porter
 position
@@ -590,7 +601,8 @@ religion
 representative
 request
 respect
-responsible
+# responsible # this word is too long; instead, we allow the following word:
+rich
 rest
 reward
 rhythm
@@ -723,7 +735,8 @@ substance
 such
 sudden
 sugar
-suggestion
+# suggestion # this word is too long; instead, we allow the following word:
+suit
 summer
 sun
 support
