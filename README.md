@@ -22,16 +22,16 @@ machine-name name --format=hex --sn=0xd6b82659
 ```
 but replacing `0xd6b82659` with a 32-bit hex string representing a serial number. The program will then print the machine name corresponding to that serial number. For example, the following serial numbers will result in the following machine names:
 
-| Serial Number | Machine Name          |
-|---------------|-----------------------|
-| `0xdeadc0de`  | metal-slope-23501     |
-| `0xd6b82659`  | chain-list-27764      |
-| `0x0`         | able-account-0        |
-| `0x1`         | small-ball-26954      |
-| `0x2`         | safe-minute-6738      |
-| `0x3`         | linen-opinion-33692   |
-| `0x4`         | conscious-pocket-1684 |
-| `0x8123`      | clear-field-33719     |
+| Serial Number | Machine Name        |
+|---------------|---------------------|
+| `0xdeadc0de`  | metal-slope-23501   |
+| `0xd6b82659`  | chain-list-27764    |
+| `0x0`         | able-account-0      |
+| `0x1`         | small-ball-26954    |
+| `0x2`         | safe-minute-6738    |
+| `0x3`         | linen-opinion-33692 |
+| `0x4`         | cool-pocket-1684    |
+| `0x8123`      | clear-field-33719   |
 
 ## Licensing
 
