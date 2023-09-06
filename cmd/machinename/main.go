@@ -24,7 +24,7 @@ var app = &cli.App{
 	Name: "machine-name",
 	// TODO: see if there's a way to get the version from a build tag, so that we don't have to update
 	// this manually
-	Version: "v0.1.2",
+	Version: "v0.1.3",
 	Usage:   "Generates localized Heroku-style names from 32-bit serial numbers",
 	Commands: []*cli.Command{
 		nameCmd,
