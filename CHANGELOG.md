@@ -8,6 +8,12 @@ All dates in this file are given in the [UTC time zone](https://en.wikipedia.org
 
 ## Unreleased
 
+## 0.1.3 - 2023-09-06
+
+### Changed
+
+- Replaced long words in the en_US.UTF-8 wordlists with shorter words (8-character limit for the first word, 9-character limit for the second word), so that the maximum possible length of a generated name is 24 characters. This change should only affect machine names which used those words; other machine names should be unaffected.
+
 ## 0.1.2 - 2023-05-20
 
 ### Added
