@@ -1,6 +1,6 @@
 module github.com/PlanktoScope/machine-name
 
-go 1.20
+go 1.22
 
 require (
 	github.com/pkg/errors v0.9.1

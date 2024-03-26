@@ -1,6 +1,6 @@
 module github.com/PlanktoScope/machine-name/tools
 
-go 1.19
+go 1.22
 
 require (
 	github.com/golangci/golangci-lint v1.57.1
