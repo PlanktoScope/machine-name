@@ -9,8 +9,8 @@ import (
 )
 
 func SelectName(sn uint32, first []string, second []string) string {
-	firstSize := uint32(len(first))
-	secondSize := uint32(len(second))
+	firstSize := uint32(len(first))   //nolint:gosec // we assume string length is less than 2^32
+	secondSize := uint32(len(second)) //nolint:gosec // we assume string length is less than 2^32
 	quotient := shuffle(sn)
 	firstIndex := quotient % firstSize
 	quotient /= firstSize

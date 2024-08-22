@@ -9,7 +9,7 @@ linters-settings:
   gocyclo:
     min-complexity: 15
   govet:
-    check-shadowing: true
+    shadow: true
   misspell:
     locale: US
   nolintlint:
@@ -33,7 +33,7 @@ linters:
     - bodyclose
     # - depguard
     - dupl
-    - exportloopref
+    - copyloopvar
     - forcetypeassert
     - funlen
     - gci
@@ -43,7 +43,7 @@ linters:
     - gocyclo
     - godot
     - gofumpt
-    - gomnd
+    - mnd
     - goprintffuncname
     - gosec
     - lll
