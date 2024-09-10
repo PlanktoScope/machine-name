@@ -79,5 +79,5 @@ func parseSerialNumber(raw string, format string) (uint32, error) {
 	const base = 16
 	const parsedWidth = 32
 	parsed64, err := strconv.ParseUint(strings.TrimPrefix(raw, "0x"), base, parsedWidth)
-	return uint32(parsed64), err //nolint:gosec // parsed width is already limited to 32
+	return uint32(parsed64), err
 }
