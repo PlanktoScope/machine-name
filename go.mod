@@ -4,7 +4,7 @@ go 1.24
 
 require (
 	github.com/pkg/errors v0.9.1
-	github.com/urfave/cli/v2 v2.27.5
+	github.com/urfave/cli/v2 v2.27.6
 	gopkg.in/yaml.v3 v3.0.1
 )
 
